@@ -7,7 +7,7 @@ export HISTCONTROL=ignoreboth
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
-shopt -s checkwinsize
+shopt -s checkwinsize || true
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
@@ -45,5 +45,5 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
-
+export PATH=${PATH}:${HOME}/local/bin
 export PATH=${PATH}:${HOME}/.local/bin

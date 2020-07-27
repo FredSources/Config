@@ -45,5 +45,14 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
+
+ssh-add ~/.ssh/id_github >/dev/null >/dev/null 2>&1 
+if [ $? != 0 ]
+then
+  eval "$(ssh-agent -s)" >/dev/null >/dev/null 2>&1  
+  ssh-add ~/.ssh/id_github >/dev/null >/dev/null 2>&1  
+fi
+ssh-add ~/.ssh/id_ed25519 >/dev/null >/dev/null 2>&1  
+
 export PATH=${PATH}:${HOME}/local/bin
 export PATH=${PATH}:${HOME}/.local/bin
